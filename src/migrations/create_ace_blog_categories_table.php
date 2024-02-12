@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAceBlogPostsTable extends Migration
+class CreateAceBlogCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,13 @@ class CreateAceBlogPostsTable extends Migration
     public function up()
     {
     
-        Schema::create('ace_blog_posts', function (Blueprint $table) {
+        Schema::create('ace_blog_categories', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->dateTime('posted_at')->nullable();
-            $table->tinyInteger('is_published')->nullable();
+            $table->bigInteger('created_by')->nullable();
+            $table->bigInteger('parent_id')->nullable();
+            $table->integer('lft')->nullable();
+            $table->integer('rgt')->nullable();
+            $table->integer('depth')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,6 +33,6 @@ class CreateAceBlogPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ace_blog_posts');
+        Schema::dropIfExists('ace_blog_categories');
     }
 }
