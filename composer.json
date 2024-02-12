@@ -26,11 +26,11 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0-dev"
+            "dev-master": "2.1-dev"
         },
         "laravel": {
             "providers": [
-              "Yousafitpro\\PhotoLibrary\\UcPhotoLibraryServiceProvider"
+              "ACE\\ACEBlog\\ACEBlogServiceProvider"
             ]
         }
     },
