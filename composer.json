@@ -1,19 +1,40 @@
 {
-    "name": "ace-blog-package/package",
-    "description": "Description of your package",
+    "name": "yousafitpro/photo-gallery-and-simple-file-manager",
     "type": "library",
+    "description": "Very helpful for managing photos and all type of files",
+    "keywords": ["photo gallery","photo management","file manager","gallery","Laravel","Composer"],
+    "homepage": "https://github.com/yousafitpro/c-photo-library-and-simple-file-manager",
     "license": "MIT",
     "authors": [
         {
-            "name": "MuhammadYousaf",
-            "email": "yousaf.itpro@gmail.com"
+            "name": "Muhammad Yousaf",
+            "email": "yousaf.connect@gmail.com",
+            "homepage": "https://github.com/yousafitpro",
+            "role": "Developer"
         }
     ],
+    "require": {
+        "php": ">=8.2"
+    },
     "autoload": {
+        "files": [
+           "src/helpers/main.php"
+        ],
         "psr-4": {
             "ACE\\ACEBlog\\": "src/"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+              "Yousafitpro\\PhotoLibrary\\UcPhotoLibraryServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true
+
 }
