@@ -1,0 +1,19 @@
+{
+    "name": "ace-blog-package/package",
+    "description": "Description of your package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MuhammadYousaf",
+            "email": "yousaf.itpro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ACE\\ACEBlog\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
