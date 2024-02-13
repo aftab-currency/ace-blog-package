@@ -3,7 +3,7 @@
 namespace ACE\ACEBlog\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-class ACEBlogController extends Controller
+class ACEBlogCommentController extends Controller
 {
   //asdasdasdasdas
 
@@ -12,6 +12,6 @@ class ACEBlogController extends Controller
 
 
 //adasdasdadad
-      return view('ACEBlog::index');
+      return view('ACEBlog::admin.comment.index');
   }
 }
