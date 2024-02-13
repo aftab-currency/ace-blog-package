@@ -52,8 +52,8 @@
         <div id="listItem2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
            
-                <a class="collapse-item" href="buttons.html">All Comments</a>
-                <a class="collapse-item" href="cards.html">Add Comment</a>
+                <a class="collapse-item" href="#">All Comments</a>
+                <a class="collapse-item" href="#">Add Comment</a>
             </div>
         </div>
     </li>
@@ -80,8 +80,8 @@
         <div id="listItem4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
            
-                <a class="collapse-item" href="buttons.html">All Images</a>
-                <a class="collapse-item" href="cards.html">Upload Image</a>
+                <a class="collapse-item" href="#">All Images</a>
+                <a class="collapse-item" href="#">Upload Image</a>
             </div>
         </div>
     </li>
