@@ -9,9 +9,10 @@ class ACEBlogPostController extends Controller
 
   public function index(Request $request)
   {
-
-
-//adasdasdadad
       return view('ACEBlog::admin.post.index');
+  }
+  public function add(Request $request)
+  {
+      return view('ACEBlog::admin.post.add');
   }
 }

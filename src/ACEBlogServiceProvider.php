@@ -10,6 +10,7 @@
                 __DIR__.'/migrations' => database_path('migrations'),
                 __DIR__.'/resources/css' => public_path('vendor/ACEBlog/css'),
                 __DIR__.'/resources/js' => public_path('vendor/ACEBlog/js'),
+                __DIR__.'/resources/img' => public_path('vendor/ACEBlog/img'),
             ], 'ACEBlog');
 
             //gjhgjhgasdasdasd

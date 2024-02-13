@@ -36,8 +36,8 @@
         <div id="listItem1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
            
-                <a class="collapse-item" href="buttons.html">All Posts</a>
-                <a class="collapse-item" href="cards.html">Add Post</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/posts')}}">All Posts</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/posts/add')}}">Add Post</a>
             </div>
         </div>
     </li>
@@ -66,8 +66,8 @@
         <div id="listItem3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
            
-                <a class="collapse-item" href="buttons.html">All Categories</a>
-                <a class="collapse-item" href="cards.html">Add Category</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/categories')}}">All Categories</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/categories/add')}}">Add Category</a>
             </div>
         </div>
     </li>

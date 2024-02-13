@@ -14,4 +14,8 @@ class ACEBlogCategoryController extends Controller
 //adasdasdadad
       return view('ACEBlog::admin.category.index');
   }
+  public function add(Request $request)
+  {
+      return view('ACEBlog::admin.category.add');
+  }
 }

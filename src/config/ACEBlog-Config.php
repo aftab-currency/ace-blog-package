@@ -2,5 +2,6 @@
 
 return [
     'layout'=>'ACEBlog::layout.master',
-    'disk'=>'public'
+    'disk'=>'public',
+    'UserModel'=>'User'
 ];
