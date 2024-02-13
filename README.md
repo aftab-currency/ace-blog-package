@@ -15,3 +15,7 @@ php artisan migrate
 # Clear all Cache
 
 php artisan optimize:clear
+
+# for admin dashboard 
+
+yourdomain/ACE-Blog
