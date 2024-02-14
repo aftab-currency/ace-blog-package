@@ -11,7 +11,7 @@
                     
                     
     <h5>Admin - Add Category</h5>
-    <form method="post" action="{{url('ACE-Blog/categories/add')}}">
+    <form method="post" action="{{url('ACE-Blog/categories/edit',$post->id)}}">
 
         @csrf
        
@@ -27,7 +27,7 @@
         <div class="form-group">
             <label for="category_category_name">Category Name</label>
 
-            <input type="text" class="form-control" id="category_name" oninput="populate_slug_field();" required="" aria-describedby="category_category_name_help" name="category_name" value="">
+            <input type="text" value="{{$post->translation->category_name}}" class="form-control" id="category_name" oninput="populate_slug_field();" required="" aria-describedby="category_category_name_help" name="category_name" value="">
 
             <small id="category_category_name_help" class="form-text text-muted">The name of the category</small>
         </div>
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             <label for="category_slug">Category slug</label>
-            <input maxlength="100" pattern="[a-zA-Z0-9-]+" type="text" required="" class="form-control" id="category_slug" oninput="SHOULD_AUTO_GEN_SLUG=false;" aria-describedby="category_slug_help" name="slug" value="">
+            <input maxlength="100" pattern="[a-zA-Z0-9-]+" type="text" required="" class="form-control" id="category_slug" oninput="SHOULD_AUTO_GEN_SLUG=false;" aria-describedby="category_slug_help" name="slug" value="{{$post->translation->slug}}">
 
             <small id="category_slug_help" class="form-text text-muted">
                 Letters, numbers, dash only. The slug
@@ -45,11 +45,11 @@
             </small>
         </div>
 
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label for="category_slug">Category Tree</label>
             <ul class="wtree">
                             </ul>
-        </div> --}}
+        </div>
 
         {{-- <div class="form-group">
             <label for="category_slug">Parent Category</label>
@@ -61,12 +61,13 @@
         </div> --}}
 
         <div class="form-group">
-            <label for="category_description">Category Description (optional) </label>
-            <textarea name="category_description" class="form-control" id="category_description"></textarea>
+            <label for="category_description">Category Description (optional)</label>
+            <textarea name="category_description" class="form-control" id="category_description">{{$post->translation->category_description}}</textarea>
+
 
         </div>
 
-        <button type="submit" class="btn btn-primary" id="submit-btn">Add new category</button>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Update Category</button>
     </form>
         <script>
             SHOULD_AUTO_GEN_SLUG = false;

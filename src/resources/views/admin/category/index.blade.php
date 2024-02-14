@@ -13,41 +13,32 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                          
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th style="max-width: 40px">Actions</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
+                   
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
+                       @foreach ($posts as $post)
+                       <tr>
+                        
+                        <td>{{$post->translation->category_name}}</td>
+                    
+                        <td>
+                            <div class="dropdown">
+                                <a href="javascript:none" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Actions
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="javascript:void" onclick="delete_post('{{url('ACE-Blog/category-delete',$post->id)}}')"> <i class="fas fa-fw fa-trash"></i> Delete</a>
+                                  <a class="dropdown-item" href="{{url('ACE-Blog/category-edit',$post->id)}}"><i class="fas fa-fw fa-edit"></i> Edit</a>
+                                </div>
+                              </div>
+                        </td>
+                    </tr>
+                       @endforeach
+                       
                         
                     </tbody>
                 </table>
@@ -57,7 +48,26 @@
 
 </div>
 <script>
+
+    function delete_post(url)
+    {
+        Swal.fire({
+  title: 'Are you sure?',
+  text: 'You won\'t be able to delete this!',
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes',
+  cancelButtonText: 'No'
+}).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href=url;
+  } else if (result.dismiss === Swal.DismissReason.cancel) {
+    
+  }
+})
+    }
  $(document).ready(function() {
+
   $('#dataTable').DataTable();
 });
 
