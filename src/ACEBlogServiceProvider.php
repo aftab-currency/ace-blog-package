@@ -1,10 +1,18 @@
 <?php
 
     namespace ACE\ACEBlog;
+    use ACE\ACEBlog\Commands\ACEBlogInstallCommand;
     use Illuminate\Support\ServiceProvider;
     class ACEBlogServiceProvider extends ServiceProvider {
         public function boot()
         {
+            // commands
+            if ($this->app->runningInConsole()) {
+                $this->commands([
+                    ACEBlogInstallCommand::class,
+                    // Add more commands here if needed
+                ]);
+            }
             $this->publishes([
                 __DIR__.'/config/ACEBlog-Config.php' => config_path('ACEBlog-Config.php'),
                 __DIR__.'/migrations' => database_path('migrations'),
