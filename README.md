@@ -19,3 +19,11 @@ php artisan optimize:clear
 # for admin dashboard 
 
 yourdomain/ACE-Blog
+
+# Git -> You need to add following line in .gitignore because we have css and js files
+
+/public/vendor/ACEBlog
+
+# May be for local disk you need to create symbolic link
+
+ln -s ../storage/app/images public/images

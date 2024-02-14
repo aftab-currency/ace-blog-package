@@ -26,6 +26,16 @@ Route::prefix('ACE-Blog')
         Route::post('/categories/edit/{id}','ACEBlogCategoryController@update');
         // post end
 
+
+        // post start
+        Route::get('/images','ACEBlogImageController@index');
+        Route::get('/images/upload-image','ACEBlogImageController@upload_image');
+        Route::post('/images/upload-image','ACEBlogImageController@upload_image_process');
+        // post end
+
+
+
+
         Route::get('/post/{id}/comments','ACEBlogCommentController@index');
         Route::get('/categories','ACEBlogCategoryController@index');
         Route::get('/categories/add','ACEBlogCategoryController@add');

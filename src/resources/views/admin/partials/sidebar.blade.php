@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="javascript:void">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -80,8 +80,8 @@
         <div id="listItem4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
            
-                <a class="collapse-item" href="#">All Images</a>
-                <a class="collapse-item" href="#">Upload Image</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/images')}}">All Images</a>
+                <a class="collapse-item" href="{{url('ACE-Blog/images/upload-image')}}">Upload Image</a>
             </div>
         </div>
     </li>

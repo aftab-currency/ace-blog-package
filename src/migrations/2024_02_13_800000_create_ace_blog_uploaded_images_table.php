@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAceBlogUploadedPostsTable extends Migration
+class CreateAceBlogUploadedImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class CreateAceBlogUploadedPostsTable extends Migration
     public function up()
     {
     
-        Schema::create('ace_blog_uploaded_posts', function (Blueprint $table) {
+        Schema::create('ace_blog_uploaded_images', function (Blueprint $table) {
             $table->id();
-            $table->text('uploaded_images');
+            $table->text('image_size');
             $table->text('image_title');
             $table->text('source');
             $table->bigInteger('uploader_id')->nullable();
@@ -32,6 +32,6 @@ class CreateAceBlogUploadedPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ace_blog_uploaded_posts');
+        Schema::dropIfExists('ace_blog_uploaded_images');
     }
 }
