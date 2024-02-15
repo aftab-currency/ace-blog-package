@@ -1,7 +1,7 @@
 <?php
 
     namespace ACE\ACEBlog;
-    use ACE\ACEBlog\Commands\ACEBlogInstallCommand;
+    use ACE\ACEBlog\commands\ACEBlogInstallCommand;
     use Illuminate\Support\ServiceProvider;
     class ACEBlogServiceProvider extends ServiceProvider {
         public function boot()
