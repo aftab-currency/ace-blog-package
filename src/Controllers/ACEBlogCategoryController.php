@@ -2,10 +2,12 @@
 
 namespace ACE\ACEBlog\Controllers;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use ACE\ACEBlog\Models\AceBlogCategory;
 use ACE\ACEBlog\Models\AceBlogCategoryTranslation;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 class ACEBlogCategoryController extends Controller
 {
   //asdasdasdasdas
@@ -50,7 +52,7 @@ class ACEBlogCategoryController extends Controller
      
       $input=$request->all();
       $cate=AceBlogCategory::create([
-        'created_by'=>ACEBlog_Auth()->id,
+        'created_by'=>User::aceblog_auth_user()['id'],
       ]);
       $translation=AceBlogCategoryTranslation::create([
         'category_id'=>$cate->id,

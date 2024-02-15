@@ -3,7 +3,7 @@
 @section('content')
 <script src="//cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 
-<form method="post" action="{{url('ACE-Blog/posts/add')}}">
+<form method="post" action="{{url('ACE-Blog/posts/add')}}" enctype="multipart/form-data">
 
 @csrf
 <div class="form-group">
@@ -118,15 +118,23 @@
 
 
     <div class='bg-white pt-4 px-4 pb-0 my-2 mb-4 rounded border'>
-        <style>
-            .image_upload_other_sizes {
-                display: none;
-            }
-        </style>
+       
         <h4>Featured Images</h4>
 
+        <div class="form-group mb-4 p-2
+        image_upload_other_sizes
+            ">
 
-                    <div class="form-group mb-4 p-2
+            <label for="blog_image_thumbnail">Image - Thumbnail (required)</label>
+            <small id="blog_image_thumbnail_help" class="form-text text-muted">Upload Thumbnail image -
+            <code>150&times;150px</code> - it will
+            get automatically resized if larger
+            </small>
+            <input class="form-control" type="file" name="image_thumbnail" required id="blog_image_thumbnail"
+            aria-describedby="blog_image_thumbnail_help">
+
+                    </div>
+                    {{-- <div class="form-group mb-4 p-2
                             ">
                 
                 <label for="blog_image_large">Image - Large (optional)</label>
@@ -137,8 +145,8 @@
                 <input class="form-control" type="file" name="image_large" id="blog_image_large"
                        aria-describedby="blog_image_large_help">
 
-                            </div>
-                    <div class="form-group mb-4 p-2
+                            </div> --}}
+                    {{-- <div class="form-group mb-4 p-2
                             image_upload_other_sizes
                                 ">
                 
@@ -150,26 +158,10 @@
                 <input class="form-control" type="file" name="image_medium" id="blog_image_medium"
                        aria-describedby="blog_image_medium_help">
 
-                            </div>
-                    <div class="form-group mb-4 p-2
-                            image_upload_other_sizes
-                                ">
-                
-                <label for="blog_image_thumbnail">Image - Thumbnail (optional)</label>
-                <small id="blog_image_thumbnail_help" class="form-text text-muted">Upload Thumbnail image -
-                    <code>150&times;150px</code> - it will
-                    get automatically resized if larger
-                </small>
-                <input class="form-control" type="file" name="image_thumbnail" id="blog_image_thumbnail"
-                       aria-describedby="blog_image_thumbnail_help">
-
-                            </div>
+                            </div> --}}
+                    
         
-        <p>
-            By default it will resize for all images based on the first image. If you want to select specific images for
-            each size, please click: <span onclick='$(this).parent().hide(); $(".image_upload_other_sizes").slideDown()'
-                                           class='btn btn-light btn-sm'>Show other sizes</span>
-        </p>
+       
 
     </div>
 
@@ -178,13 +170,17 @@
     <h4>Categories:</h4>
     <div class='row'>
 
-                    <div class='col-md-12'>
-                No categories
-            </div>
+             
         
         <div class='col-md-12 my-3 text-center'>
-
-            <em><a class="a-link-cart-color" target='_blank' href="https://aubo1.ace4news.com/blog_admin/categories/add_category"><i class="fa fa-external-link" aria-hidden="true"></i>
+<select class="form-control mySelect" name="categories[]" multiple>
+    @foreach (aceblog_categories() as $cate)
+        <option value="{{$cate->id}}">{{$cate->translation->category_name}}</option>
+    @endforeach
+</select>
+<br>
+<br>
+            <em><a class="a-link-cart-color" target='_blank' href="{{url('ACE-Blog/categories/add')}}"><i class="fa fa-external-link" aria-hidden="true"></i>
                     Add new categories
                     here</a></em>
         </div>

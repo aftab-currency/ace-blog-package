@@ -3,7 +3,7 @@
 
 Route::prefix('ACE-Blog')
     ->namespace('ACE\ACEBlog\Controllers')
-    ->middleware(['web'])
+    ->middleware(config('ACEBlog-Config.admin_routes_middlewares'))
     ->group(function () {
         Route::get('/', 'ACEBlogController@index')->name('ACEBlog.index');
 
@@ -30,6 +30,7 @@ Route::prefix('ACE-Blog')
         // post start
         Route::get('/images','ACEBlogImageController@index');
         Route::get('/images/upload-image','ACEBlogImageController@upload_image');
+        Route::get('/images/delete-image/{id}','ACEBlogImageController@delete_image');
         Route::post('/images/upload-image','ACEBlogImageController@upload_image_process');
         // post end
 
@@ -42,3 +43,20 @@ Route::prefix('ACE-Blog')
     });
 
 
+    Route::prefix(config('ACEBlog-Config.blog_prefix'))
+    ->namespace('ACE\ACEBlog\Controllers')
+    ->group(function () {
+         // post start
+        Route::get('/Post/{id}','ACEBlogPostController@show');
+        // post end
+
+    });
+    Route::prefix(config('ACEBlog-Config.blog_api_prefix'))
+    ->namespace('ACE\ACEBlog\Controllers')
+    ->group(function () {
+         // post start
+        Route::get('/post/{id}','ACEBlogPostController@show');
+        Route::get('/posts','ACEBlogPostController@index');
+        // post end
+
+    });

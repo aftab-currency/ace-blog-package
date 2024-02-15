@@ -1,6 +1,8 @@
 <?php
 
+use ACE\ACEBlog\Models\AceBlogCategory;
 use Illuminate\Http\Request;
+use ACE\ACEBlog\Models\AceBlogPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -58,23 +60,50 @@ if (! function_exists('aceblog_upload_image')) {
     }
 }
 if (! function_exists('aceblog_get_image_url')) {
-    function  aceblog_get_image_url($id,$size) {
+    function  aceblog_get_image_url($id,$size,$s3_image_expiring_days=100000000) {
         $size=$size.'_path';
+        
         $image=AceBlogUploadedImage::find($id);
+ 
         $url=$image->$size;
         if($image->disk=='public')
         {
-         $url=url('storage/'.$url);
+         $url=asset('storage/'.$url);
         }
         if($image->disk=='local')
         {
-         $url=url($url);
+         $url=asset($url);
         }
         if($image->disk=='s3')
         {
-         $url=Storage::disk('s3')->temporaryUrl($url, now()->addMinutes(5));
+         $url=Storage::disk('s3')->temporaryUrl($url, now()->addDays($s3_image_expiring_days));
         }
-
         return $url;
+    }
+}
+if (! function_exists('aceblog_categories')) {
+    function  aceblog_categories() {
+        return AceBlogCategory::query()
+        // ->where('user_id',ACEBlog_Auth()->id)
+        ->with('translation')
+        ->get();
+    }
+}
+if (! function_exists('aceblog_posts')) {
+    function  aceblog_posts() {
+         return AceBlogPost::query()
+        // ->where('user_id',ACEBlog_Auth()->id)
+        ->with(['translation','categories','categories.category','categories.translation'])
+        ->get();
+    }
+}
+if (! function_exists('aceblog_encrypt_number')) {
+    function  aceblog_encrypt_number($num) {
+         return $num*13121312;
+    }
+}
+if (! function_exists('aceblog_decrypt_number')) {
+    function  aceblog_decrypt_number($num) {
+         return $num/13121312;
     }
 }

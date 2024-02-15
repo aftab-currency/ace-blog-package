@@ -22,6 +22,7 @@ class CreateAceBlogUploadedImagesTable extends Migration
             $table->text('image_thumbnail_path');
             $table->text('image_large_path');
             $table->text('image_medium_path');
+            $table->text('uploaded_image_id');
             $table->text('source');
             $table->bigInteger('uploader_id')->nullable();
             $table->softDeletes();

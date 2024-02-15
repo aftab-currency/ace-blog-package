@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ACE Blog</title>
+    <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/ACEBlog/css/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -51,9 +51,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        @include('ACEBlog::admin.partials.sidebar')
-       <!-- End of Sidebar -->
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -61,7 +59,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('ACEBlog::admin.partials.header')
+              
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

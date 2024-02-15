@@ -17,13 +17,23 @@
 
     <div class='bg-white pt-4 px-4 pb-0 my-2 mb-4 rounded border'>
         <style>
-            .image_upload_other_sizes {
-                display: none;
-            }
+           
         </style>
         <h4>Featured Images</h4>
 
+        <div class="form-group mb-4 p-2
+        image_upload_other_sizes
+            ">
 
+                <label for="blog_image_thumbnail">Image - Thumbnail (required)</label>
+                <small id="blog_image_thumbnail_help" class="form-text text-muted">Upload Thumbnail image -
+                <code>150&times;150px</code> - it will
+                get automatically resized if larger
+                </small>
+                <input class="form-control" type="file" required name="image_thumbnail" id="blog_image_thumbnail"
+                aria-describedby="blog_image_thumbnail_help">
+
+                        </div>
                     <div class="form-group mb-4 p-2
                             ">
                 
@@ -49,25 +59,8 @@
                        aria-describedby="blog_image_medium_help">
 
                             </div>
-                    <div class="form-group mb-4 p-2
-                            image_upload_other_sizes
-                                ">
                 
-                <label for="blog_image_thumbnail">Image - Thumbnail (optional)</label>
-                <small id="blog_image_thumbnail_help" class="form-text text-muted">Upload Thumbnail image -
-                    <code>150&times;150px</code> - it will
-                    get automatically resized if larger
-                </small>
-                <input class="form-control" type="file" name="image_thumbnail" id="blog_image_thumbnail"
-                       aria-describedby="blog_image_thumbnail_help">
-
-                            </div>
-        
-        <p>
-            By default it will resize for all images based on the first image. If you want to select specific images for
-            each size, please click: <span onclick='$(this).parent().hide(); $(".image_upload_other_sizes").slideDown()'
-                                           class='btn btn-light btn-sm'>Show other sizes</span>
-        </p>
+       
 
     </div>
 

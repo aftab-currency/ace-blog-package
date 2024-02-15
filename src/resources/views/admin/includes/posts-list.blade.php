@@ -17,7 +17,7 @@
                 <tbody>
                    @foreach ($posts as $post)
                    <tr>
-                    <td ></td>
+                    <td > <img src="{{aceblog_get_image_url($post->translation->uploaded_image_id,'image_thumbnail',1)}}" style="width:100px"></td>
                     <td>{{$post->translation->title}}</td>
                     <td>{{$post->created_at}}</td>
                     <td>
@@ -28,6 +28,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" href="javascript:void" onclick="delete_post('{{url('ACE-Blog/post-delete',$post->id)}}')"> <i class="fas fa-fw fa-trash"></i> Delete</a>
                               <a class="dropdown-item" href="{{url('ACE-Blog/post-edit',$post->id)}}"><i class="fas fa-fw fa-edit"></i> Edit</a>
+                              <a class="dropdown-item" target="_blank" href="{{url(config('ACEBlog-Config.blog_prefix').'/Post',aceblog_encrypt_number($post->id))}}"><i class="fas fa-fw fa-eye"></i> Show</a>
                             </div>
                           </div>
                     </td>

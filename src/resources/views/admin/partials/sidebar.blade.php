@@ -42,21 +42,6 @@
         </div>
     </li>
 
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#listItem2"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-comment"></i>
-            <span>Comments</span>
-        </a>
-        <div id="listItem2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-           
-                <a class="collapse-item" href="#">All Comments</a>
-                <a class="collapse-item" href="#">Add Comment</a>
-            </div>
-        </div>
-    </li>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#listItem3"
             aria-expanded="true" aria-controls="collapseTwo">

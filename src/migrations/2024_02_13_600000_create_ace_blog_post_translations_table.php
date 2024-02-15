@@ -29,6 +29,7 @@ class CreateAceBlogPostTranslationsTable extends Migration
             $table->text('image_medium')->nullable();
             $table->text('image_thumbnail')->nullable();
             $table->text('lang_id')->nullable();
+            $table->text('uploaded_image_id');
             $table->softDeletes();
             $table->timestamps();
         });
