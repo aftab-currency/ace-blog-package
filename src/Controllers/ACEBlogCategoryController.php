@@ -44,7 +44,7 @@ class ACEBlogCategoryController extends Controller
         ->with('translation')
         ->delete();
         aceblog_flash_message('Post successfully deleted');
-        return redirect(url('ACE-Blog/posts'));  
+        return redirect(url('ACE-Blog/categories')); 
     }
     public function store(Request $request)
     {
