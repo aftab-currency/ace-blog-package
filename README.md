@@ -9,18 +9,6 @@ php artisan ACEBlog:install
 # May be for local disk you need to create symbolic link
 ln -s ../storage/app/images public/images
 
-# Publish service provider
-
-artisan vendor:publish --provider="ACE\ACEBlog\ACEBlogServiceProvider"
-
-# for admin dashboard 
-
-yourdomain/ACE-Blog
-
-# Git -> You need to add following line in .gitignore because we have css and js files
-
-/public/vendor/ACEBlog
-
 # User Model
 
 add these functions to your user model
@@ -38,6 +26,16 @@ add these functions to your user model
          $user=User::find($id);
         return ['id'=>$user->id,'name'=>$user->first_name.' '.$user->last_name];
     }
+
+# for admin dashboard 
+
+yourdomain/ACE-Blog
+
+# Git -> You need to add following line in .gitignore because we have css and js files
+
+/public/vendor/ACEBlog
+
+
 # API Usage
 
 Get All Posts
