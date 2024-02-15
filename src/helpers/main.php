@@ -63,7 +63,7 @@ if (! function_exists('aceblog_get_image_url')) {
     function  aceblog_get_image_url($id,$size,$s3_image_expiring_days=100000000) {
         $size=$size.'_path';
         
-        $image=AceBlogUploadedImage::find($id);
+        $image=AceBlogUploadedImage::where('id',$id)->withTrashed()->first();
  
         $url=$image->$size;
         if($image->disk=='public')
