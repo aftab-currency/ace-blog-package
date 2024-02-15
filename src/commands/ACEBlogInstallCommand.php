@@ -1,5 +1,5 @@
 <?php
-namespace ACE\ACEBlog\Commands;
+namespace ACE\ACEBlog\commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
