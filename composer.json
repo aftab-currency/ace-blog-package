@@ -10,7 +10,6 @@
             "php artisan ACEBlog:install"
         ],
         "post-update-cmd": [
-        "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan ACEBlog:install"
         ]
@@ -36,7 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.3-dev"
+            "dev-master": "4.4-dev"
         },
         "laravel": {
             "providers": [
