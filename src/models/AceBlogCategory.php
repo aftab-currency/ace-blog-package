@@ -1,6 +1,6 @@
 <?php
 
-namespace ACE\ACEBlog\Models;
+namespace ACE\ACEBlog\models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

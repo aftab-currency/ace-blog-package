@@ -5,8 +5,8 @@ namespace ACE\ACEBlog\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use ACE\ACEBlog\Models\AceBlogCategory;
-use ACE\ACEBlog\Models\AceBlogCategoryTranslation;
+use ACE\ACEBlog\models\AceBlogCategory;
+use ACE\ACEBlog\models\AceBlogCategoryTranslation;
 
 class ACEBlogCategoryController extends Controller
 {

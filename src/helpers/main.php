@@ -1,12 +1,12 @@
 <?php
 
-use ACE\ACEBlog\Models\AceBlogCategory;
+use ACE\ACEBlog\models\AceBlogCategory;
 use Illuminate\Http\Request;
-use ACE\ACEBlog\Models\AceBlogPost;
+use ACE\ACEBlog\models\AceBlogPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use ACE\ACEBlog\Models\AceBlogUploadedImage;
+use ACE\ACEBlog\models\AceBlogUploadedImage;
 
  define('aceblog_flash_message_key','aceblog_flash_message_key');
 

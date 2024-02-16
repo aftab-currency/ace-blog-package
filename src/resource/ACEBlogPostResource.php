@@ -1,6 +1,6 @@
 <?php
 
-namespace ACE\ACEBlog\Resource;
+namespace ACE\ACEBlog\resource;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;

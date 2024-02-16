@@ -4,13 +4,13 @@ namespace ACE\ACEBlog\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use ACE\ACEBlog\Models\AceBlogPost;
+use ACE\ACEBlog\models\AceBlogPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use ACE\ACEBlog\Models\AceBlogCategory;
-use ACE\ACEBlog\Models\AceBlogPostCategory;
-use ACE\ACEBlog\Resource\ACEBlogPostResource;
-use ACE\ACEBlog\Models\AceBlogPostTranslation;
+use ACE\ACEBlog\models\AceBlogCategory;
+use ACE\ACEBlog\models\AceBlogPostCategory;
+use ACE\ACEBlog\resource\ACEBlogPostResource;
+use ACE\ACEBlog\models\AceBlogPostTranslation;
 
 class ACEBlogPostController extends Controller
 {
