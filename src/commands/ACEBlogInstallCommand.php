@@ -25,7 +25,7 @@ class ACEBlogInstallCommand extends Command
         Artisan::call('migrate --path=database/migrations/2024_02_13_600000_create_ace_blog_post_translations_table.php');
         Artisan::call('migrate --path=database/migrations/2024_02_13_700000_create_ace_blog_posts_table.php');
         Artisan::call('migrate --path=database/migrations/2024_02_13_800000_create_ace_blog_uploaded_images_table.php');
-        Artisan::call('optimize:clear');
+        // Artisan::call('optimize:clear');
         Artisan::call('storage:link');
        
 
