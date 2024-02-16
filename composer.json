@@ -4,6 +4,14 @@
     "description": "Blog Management",
     "keywords": ["ACE Blog","Blog Management","Laravel","Composer"],
     "license": "MIT",
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan ACEBlog:install"
+        ],
+        "post-update-cmd": [
+            "php artisan ACEBlog:install"
+        ]
+    },
     "authors": [
         {
             "name": "Muhammad Yousaf",
