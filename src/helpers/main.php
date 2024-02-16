@@ -60,7 +60,7 @@ if (! function_exists('aceblog_upload_image')) {
     }
 }
 if (! function_exists('aceblog_get_image_url')) {
-    function  aceblog_get_image_url($id,$size,$s3_image_expiring_days=100000000) {
+    function  aceblog_get_image_url($id,$size,$s3_image_expiring_days=6) {
         $size=$size.'_path';
         
         $image=AceBlogUploadedImage::where('id',$id)->withTrashed()->first();
