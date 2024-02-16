@@ -2,9 +2,9 @@
 
 namespace ACE\ACEBlog\Controllers;
 use Illuminate\Http\Request;
-use ACE\ACEBlog\Models\AceBlogPost;
-use ACE\ACEBlog\Models\AceBlogPostTranslation;
-use ACE\ACEBlog\Models\AceBlogUploadedImage;
+use ACE\ACEBlog\models\AceBlogPost;
+use ACE\ACEBlog\models\AceBlogPostTranslation;
+use ACE\ACEBlog\models\AceBlogUploadedImage;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 

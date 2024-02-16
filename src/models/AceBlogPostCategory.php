@@ -1,10 +1,10 @@
 <?php
 
-namespace ACE\ACEBlog\Models;
+namespace ACE\ACEBlog\models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use ACE\ACEBlog\Models\AceBlogCategoryTranslation;
+use ACE\ACEBlog\models\AceBlogCategoryTranslation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class AceBlogPostCategory extends Model

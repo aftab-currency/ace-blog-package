@@ -2,8 +2,8 @@
 
 namespace ACE\ACEBlog\Controllers;
 
-use ACE\ACEBlog\Models\AceBlogCategory;
-use ACE\ACEBlog\Models\AceBlogPost;
+use ACE\ACEBlog\models\AceBlogCategory;
+use ACE\ACEBlog\models\AceBlogPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 class ACEBlogController extends Controller
