@@ -64,7 +64,10 @@ if (! function_exists('aceblog_get_image_url')) {
         $size=$size.'_path';
         
         $image=AceBlogUploadedImage::where('id',$id)->withTrashed()->first();
- 
+         if($image==null)
+         {
+            return '';
+         }
         $url=$image->$size;
         if($image->disk=='public')
         {

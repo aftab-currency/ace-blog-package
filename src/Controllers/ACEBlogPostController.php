@@ -106,13 +106,17 @@ class ACEBlogPostController extends Controller
       'seo_title'=>$input['seo_title'],
       'post_body'=>$input['post_body']
     ]);
-    foreach($input['categories'] as $c)
+    if(isset($input['categories']))
     {
-      AceBlogPostCategory::create([
-        'post_id'=>$post->id,
-        'category_id'=>$c
-      ]);
+      foreach($input['categories'] as $c)
+      {
+        AceBlogPostCategory::create([
+          'post_id'=>$post->id,
+          'category_id'=>$c
+        ]);
+      }
     }
+
     $res=ACEBlogImageController::upload_image_process0($request);
     $translation->uploaded_image_id=$res['uploaded_image_id'];
     $translation->save();
