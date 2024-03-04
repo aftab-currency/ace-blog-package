@@ -3,6 +3,7 @@
 composer require ace-blog-package/package
 
 # Install ACE Blog
+php artisan vendor:publish --provider="ACE\ACEBlog\ACEBlogServiceProvider"
 
 php artisan ACEBlog:install
 
